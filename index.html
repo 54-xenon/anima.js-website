@@ -9,16 +9,31 @@
 </head>
 <body>
     <div class="container">
-        <h2>Apple信者@RAM不足</h2>
+        <h1 class="ml10">
+            <spen class="text-wrapper">
+                <spen class="letters">Apple信者@RAM不足</spen>
+            </spen>
+        </h1>
     </div>
     <script src="anime.min.js"></script>
     <script>
-        anime({
-            targets: 'div',
-            translateX: 0,
-            rotate: '1turn',
-            duration: 800,
-        });
+        const textWrapper = document.querySelector('.ml10 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml10 .letter',
+                rotateY: [-90, 0],
+                duration: 1300,
+                delay: (el, i) => 45 * i
+            }).add({
+                targets: '.ml10',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+            });
+            
     </script>        
 </body>
 </html>
