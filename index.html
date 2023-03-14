@@ -14,6 +14,7 @@
                 <spen class="letters">Apple信者@RAM不足</spen>
             </spen>
         </h1>
+        <div class="perfect-circle"></div>
     </div>
     <script src="anime.min.js"></script>
     <script>
@@ -33,7 +34,15 @@
                 easing: "easeOutExpo",
                 delay: 1000
             });
-            
-    </script>        
+        anime({
+            targets: ".perfect-circle",
+            translateX: 465,
+            rotate: '1turn',
+            duration: 1800,
+            loop: true,
+             
+
+        });
+    </script>
 </body>
 </html>
